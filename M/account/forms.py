@@ -34,6 +34,12 @@ class UserChangeForm(forms.ModelForm):
         fields = ('phone_number', 'email', 'full_name', 'password', 'last_login')
 
 
+class UserRegistrationForm(forms.Form):
+    phone_number = forms.CharField(label='phone number', widget=forms.TextInput(attrs={'class': 'form-control'}))
+    email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    full_name = forms.CharField(label='full name', widget=forms.TextInput(attrs={'class': 'form-control'}))
+    password1 = forms.CharField(label='password', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    password2 = forms.CharField(label='confirm password', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
 
 
