@@ -7,6 +7,7 @@ from utils import send_otp_code
 from django.contrib import messages
 
 
+
 class UserRegistrationView(View):
     form_class = UserRegistrationForm
     template_name = 'account/register.html'

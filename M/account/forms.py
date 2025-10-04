@@ -49,8 +49,25 @@ class UserRegistrationForm(forms.Form):
         if p1 and p2 and p1 != p2:
             raise ValidationError("passwords don't match")
 
+    def clean_phone_number(self):
+        cd = self.cleaned_data
+        phone_number = cd['phone_number']
+        user = User.objects.filter(phone_number=phone_number).exists()
+        if user:
+            raise ValidationError("phone number already exists")
+        return phone_number
+
+    def clean_email(self):
+        cd = self.cleaned_data
+        email = cd['email']
+        user = User.objects.filter(email=email).exists()
+        if user:
+            raise ValidationError("email already exists")
+        return email
+
 class VerifyCodeForm(forms.Form):
     code = forms.IntegerField()
+
 
 
 
