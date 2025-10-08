@@ -83,6 +83,7 @@ class LoginView(View):
             user = authenticate(request, username=cd['phone_number'], password=cd['password'])
             if user is not None:
                 login(request, user)
+                messages.success(request, 'you logged in successfully', 'success')
                 if self.next:
                     return redirect(self.next)
                 return redirect('home:home')
@@ -95,5 +96,11 @@ class LogoutView(LoginRequiredMixin, View):
         logout(request)
         messages.success(request, 'you logged out', 'success')
         return redirect('home:home')
+
+class UserProfileView(LoginRequiredMixin, View):
+    def get(self, request, user_id):
+        user = User.objects.get(id=user_id)
+        return render(request, 'account/profile.html', {'user': user})
+
 
 
