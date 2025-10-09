@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .forms import UserChangeForm, UserCreationForm
 from django.contrib.auth.models import Group
-from .models import User, OtpCode
+from .models import User, OtpCode, Profile
 
 
 @admin.register(OtpCode)
@@ -34,9 +34,14 @@ class UserAdmin(BaseUserAdmin):
     filter_horizontal = ()
 
 
-admin.site.unregister(Group)
-admin.site.register(User, UserAdmin)
+class ProfileInline(admin.StackedInline):
+    model = Profile
 
+class ExtendedUserAdmin(UserAdmin):
+    inlines = (ProfileInline, )
+
+admin.site.register(User, ExtendedUserAdmin)
+admin.site.unregister(Group)
 
 
 
