@@ -127,4 +127,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'account.User'
 LOGIN_URL = '/account/login/'
 
+#Google account
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'malekimohammad950@gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = 'xbmfbqdzngyqfphy'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'maleki media'
+
 
