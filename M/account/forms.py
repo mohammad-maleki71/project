@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from .models import User
+from .models import User, Profile
 from django.core.exceptions import ValidationError
 
 
@@ -74,4 +74,9 @@ class UserLoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
 
+class ProfileEditForm(forms.ModelForm):
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-control'}))
 
+    class Meta:
+        model = Profile
+        fields = ('age', 'bio')

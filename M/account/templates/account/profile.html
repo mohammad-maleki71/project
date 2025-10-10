@@ -4,5 +4,5 @@
     <h3>{{ user.full_name }}</h3>
     <small>{{ user.phone_number }}</small>
     <p>{{ user.email }}</p>
-
+    <a href="{% url 'account:user_profile_edit' user.id %}" class="btn btn-info">Edit Profile</a>
 {% endblock %}
