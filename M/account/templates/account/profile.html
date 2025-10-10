@@ -4,5 +4,10 @@
     <h3>{{ user.full_name }}</h3>
     <small>{{ user.phone_number }}</small>
     <p>{{ user.email }}</p>
-    <a href="{% url 'account:user_profile_edit' user.id %}" class="btn btn-info">Edit Profile</a>
+    {% if request.user == user%}
+        <a href="{% url 'account:user_profile_edit' user.id %}" class="btn btn-info">Edit Profile</a><br/><hr/>
+    {% endif %}
+    {% for post in posts %}
+        <a href="{% url 'home:post_detail' post.id post.slug %}">{{ post.body|truncatewords:8 }}</a><br/>
+    {% endfor %}
 {% endblock %}
