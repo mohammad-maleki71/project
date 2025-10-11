@@ -13,7 +13,8 @@ class Post(models.Model):
         return f'{self.slug}, {self.updated.strftime("%B %d, %Y")}'
 
     class Meta:
-        ordering = ['-created']
+        ordering = ['-created', 'body']
 
     def get_absolute_url(self):
         return reverse('home:post_detail', args=(self.id, self.slug))
+

@@ -2,7 +2,13 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .forms import UserChangeForm, UserCreationForm
 from django.contrib.auth.models import Group
-from .models import User, OtpCode, Profile
+from .models import User, OtpCode, Profile, Relation
+
+
+@admin.register(Relation)
+class RelationAdmin(admin.ModelAdmin):
+    list_display = ('from_user', 'to_user', 'created')
+    raw_id_fields = ('from_user','to_user')
 
 
 @admin.register(OtpCode)
