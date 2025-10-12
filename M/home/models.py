@@ -18,6 +18,15 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('home:post_detail', args=(self.id, self.slug))
 
+    def like_count(self):
+        return self.plikes.count()
+
+    def user_can_like(self, user):
+        user_like = user.ulikes.filter(post=self)
+        if user_like.exists():
+            return True
+        return False
+
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='pcomments')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ucomments')
@@ -31,3 +40,13 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['-created', 'body']
+
+
+class Like(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='plikes')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ulikes')
+
+    def __str__(self):
+        return f'{self.user} Liked {self.post.slug}'
+
+

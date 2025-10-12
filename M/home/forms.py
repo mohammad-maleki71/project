@@ -23,3 +23,7 @@ class CommentReplyForm(forms.ModelForm):
         widgets = {
             'body': forms.Textarea(attrs={'rows': 3, 'cols': 40}),
         }
+
+class SearchForm(forms.Form):
+    search = forms.CharField(widget=forms.TextInput(attrs={'rows': 3, 'cols': 40}))
+
