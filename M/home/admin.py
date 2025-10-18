@@ -1,15 +1,21 @@
 from django.contrib import admin
-from .models import Post, Comment, Like
+from .models import Post, Comment, Like, FileUpload
 
 admin.site.register(Like)
+from django.contrib import admin
+from .models import Post, FileUpload
+
+class FileUploadInline(admin.TabularInline):
+    model = FileUpload
+    extra = 1
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('user', 'slug', 'updated')
-    list_filter = ('updated',)
-    search_fields = ('body', 'slug')
-    prepopulated_fields = {'slug': ('body',)}
+    list_display = ('id', 'user', 'body', 'created', 'updated')
     raw_id_fields = ('user',)
+    prepopulated_fields = {'slug': ('body',)}
+    inlines = [FileUploadInline]
+
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):

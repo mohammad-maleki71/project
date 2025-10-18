@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from .models import Post, Comment, Like
+from .models import Post, Comment, Like, FileUpload
 from django.contrib import messages
 from .forms import PostUpdateCreateForm, CommentCreateForm, CommentReplyForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -27,10 +27,11 @@ class PostDetailView(View):
 
     def get(self, request, *args, **kwargs):
         comments = self.post_instance.pcomments.filter(is_reply=False)
+        data = self.post_instance.files.all()
         can_like = False
         if request.user.is_authenticated and self.post_instance.user_can_like(request.user):
             can_like = True
-        return render(request, 'home/details.html', {'post': self.post_instance, 'comments': comments, 'form':self.from_class, 'reply_form':self.form_class_reply, 'can_like':can_like})
+        return render(request, 'home/details.html', {'post': self.post_instance, 'comments': comments, 'form':self.from_class, 'reply_form':self.form_class_reply, 'can_like':can_like, 'data':data})
     
     @method_decorator(login_required)
     def post(self, request, *args, **kwargs):
@@ -92,7 +93,7 @@ class PostCreateView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
-        return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, {'form': form,})
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -101,6 +102,9 @@ class PostCreateView(LoginRequiredMixin, View):
             new_post.user = request.user
             new_post.slug = slugify(form.cleaned_data['body'][:30])
             new_post.save()
+            file = request.FILES.getlist('file[]')
+            for i in file:
+                FileUpload.objects.create(post=new_post, file=i)
             messages.success(request, 'Post created successfully','success')
             return redirect('home:post_detail', new_post.id, new_post.slug)
         return render(request, self.template_name, {'form': form})

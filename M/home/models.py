@@ -50,3 +50,7 @@ class Like(models.Model):
         return f'{self.user} Liked {self.post.slug}'
 
 
+class FileUpload(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='files', blank=True, null=True)
+    file = models.FileField(null=True)
+
