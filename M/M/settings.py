@@ -150,4 +150,5 @@ EMAIL_HOST_PASSWORD = 'xbmfbqdzngyqfphy'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'maleki media'
 
-
+#09121234567
+#Accem71$
