@@ -10,12 +10,26 @@ from django.utils.decorators import method_decorator
 from .forms import SearchForm
 
 class HomeView(View):
+
     def get(self, request):
+
         form = SearchForm()
-        posts = Post.objects.all()
+
+        posts = Post.objects.prefetch_related('files').all()
+
         if request.GET.get('search'):
-            posts = posts.filter(body__contains=request.GET['search'])
-        return render(request, 'home/home.html', {'posts': posts, 'form': form})
+            posts = posts.filter(
+                body__contains=request.GET['search']
+            )
+
+        return render(
+            request,
+            'home/home.html',
+            {
+                'posts': posts,
+                'form': form
+            }
+        )
 
 class PostDetailView(View):
     from_class = CommentCreateForm

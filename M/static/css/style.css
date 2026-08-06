@@ -1,0 +1,103 @@
+.home-container {
+    width: 90%;
+    margin: 40px auto;
+}
+
+
+/* Search center */
+.search-box {
+    width: 400px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+
+/* Cards grid */
+.posts-wrapper {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* Each card */
+.post-card {
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+}
+
+
+/* Images inside each post */
+.post-images {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 15px;
+
+}
+
+
+.post-images img {
+
+    width: 120px;
+
+    height: 100px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+}
+
+
+/* Text */
+.post-text a {
+
+    text-decoration: none;
+
+    color: #222;
+
+    font-size: 16px;
+
+}
+
+
+/* Responsive */
+
+@media(max-width: 1000px){
+
+    .posts-wrapper {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media(max-width: 600px){
+
+    .posts-wrapper {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
