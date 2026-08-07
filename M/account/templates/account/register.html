@@ -2,10 +2,89 @@
 
 {% block content %}
 
-<form action="" method="post" novalidate class="col-md-3">
-{% csrf_token %}
-{{ form.as_p }}
-<input  value="Send" type="submit">
-</form>
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+
+                <div class="card-body p-5">
+
+
+                    <div class="text-center mb-4">
+
+                        <div class="bg-primary text-white rounded-circle mx-auto
+                                    d-flex align-items-center justify-content-center"
+                             style="width:75px;height:75px;">
+
+                            <i class="bi bi-ui-checks fs-2"></i>
+
+                        </div>
+
+
+                        <h3 class="fw-bold text-primary mt-3">
+                            Complete Form
+                        </h3>
+
+
+                        <p class="text-muted">
+                            Please fill the required information
+                        </p>
+
+                    </div>
+
+
+
+
+                    <form method="post" novalidate>
+
+
+                        {% csrf_token %}
+
+
+
+                        <div class="mb-3">
+
+                            {{ form.as_p }}
+
+                        </div>
+
+
+
+
+                        <button type="submit"
+                                class="btn btn-primary w-100 rounded-pill py-2 fw-bold shadow-sm">
+
+
+                            <i class="bi bi-send"></i>
+
+                            Send
+
+
+                        </button>
+
+
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
 
 {% endblock %}
