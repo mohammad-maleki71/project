@@ -12,62 +12,55 @@ The application is developed using Django's built-in authentication system and f
 
 ## 👤 Account System
 
-* User Registration
-* User Login & Logout
-* Email/OTP Verification
-* Password Reset System
-* User Profile Management
-* Edit Profile
-* User Relations
-
----
+- User Registration
+- User Login & Logout
+- Email/OTP Verification
+- Password Reset System
+- User Profile Management
+- Edit Profile
+- User Relations
 
 ## 📝 Post System
 
-* Create Posts
-* Update Posts
-* Delete Posts
-* Post Detail Page
-* Upload Images
-* Display User Posts
-* Media Management
-
----
+- Create Posts
+- Update Posts
+- Delete Posts
+- Post Detail Page
+- Upload Images
+- Display User Posts
+- Media Management
 
 ## 💬 Interaction System
 
-* Like Posts
-* Comment on Posts
-* View Comments
-* User Interaction Between Profiles
-
----
+- Like Posts
+- Comment on Posts
+- View Comments
+- User Interaction Between Profiles
 
 ## 🎨 Frontend
 
-* Responsive Design
-* Django Templates
-* Bootstrap Styling
-* Static Files Management
-* Clean User Interface
+- Responsive Design
+- Django Templates
+- Bootstrap Styling
+- Static Files Management
+- Clean User Interface
 
 ---
 
 # 🛠 Technologies
 
-* Python
-* Django
-* HTML5
-* CSS3
-* Bootstrap
-* SQLite Database
-* Git & GitHub
+- Python
+- Django
+- HTML5
+- CSS3
+- Bootstrap
+- SQLite Database
+- Git & GitHub
 
 ---
 
 # 📂 Project Structure
 
-```text
 M/
 │
 ├── account/
@@ -78,7 +71,6 @@ M/
 │   ├── signals.py
 │   ├── urls.py
 │   └── templates/
-│       └── account/
 │
 ├── home/
 │   ├── models.py
@@ -86,7 +78,6 @@ M/
 │   ├── forms.py
 │   ├── urls.py
 │   └── templates/
-│       └── home/
 │
 ├── M/
 │   ├── settings.py
@@ -103,11 +94,23 @@ M/
 │
 ├── media/
 │
+├── screenshots/
+│   ├── home.png
+│   ├── login.png
+│   ├── register.png
+│   ├── verify-code.png
+│   ├── profile.png
+│   ├── edit-profile.png
+│   ├── create-post.png
+│   ├── update-post.png
+│   ├── post-detail.png
+│   ├── forgot-password.png
+│   └── like.png
+│
 ├── manage.py
 ├── requirements.txt
 ├── utils.py
 └── README.md
-```
 
 ---
 
@@ -115,178 +118,122 @@ M/
 
 ## Clone Repository
 
-```bash
 git clone https://github.com/your-username/social-media.git
-```
 
-Enter project directory:
-
-```bash
 cd M
-```
 
----
 
 ## Create Virtual Environment
 
-```bash
 python -m venv env
-```
 
-Activate environment:
 
-### Windows
+## Activate Virtual Environment
 
-```bash
+Windows:
+
 env\Scripts\activate
-```
 
-### Linux / macOS
+Linux / macOS:
 
-```bash
 source env/bin/activate
-```
 
----
 
 ## Install Dependencies
 
-```bash
 pip install -r requirements.txt
-```
 
----
 
 ## Database Migration
 
-```bash
 python manage.py migrate
-```
 
----
 
 ## Create Admin User
 
-```bash
 python manage.py createsuperuser
-```
 
----
 
 ## Run Project
 
-```bash
 python manage.py runserver
-```
 
-Open:
 
-```text
+Open in browser:
+
 http://127.0.0.1:8000/
-```
 
 ---
 
 # 📸 Screenshots
 
+
 ## 🏠 Home Page
 
-Add screenshot:
-
-```
 ![Home Page](screenshots/home.png)
-```
 
----
 
 ## 🔐 Login Page
 
-Add screenshot:
-
-```
 ![Login Page](screenshots/login.png)
-```
 
----
 
 ## 📝 Register Page
 
-Add screenshot:
-
-```
 ![Register Page](screenshots/register.png)
-```
 
----
+
+## 🔢 Verification Code Page
+
+![Verification Code](screenshots/verify-code.png)
+
 
 ## 👤 User Profile
 
-Add screenshot:
-
-```
 ![Profile Page](screenshots/profile.png)
-```
 
----
 
 ## ✏️ Edit Profile
 
-Add screenshot:
+![Edit Profile](screenshots/edit-profile.png)
 
-```
-![Edit Profile Page](screenshots/edit profile.png)
-```
-
----
 
 ## 📰 Create Post
 
-Add screenshot:
+![Create Post](screenshots/create-post.png)
 
-```
-![Create Post Page](screenshots/create a post.png)
-```
 
----
+## 🔄 Update Post
+
+![Update Post](screenshots/update-post.png)
+
 
 ## 📄 Post Detail
 
-Add screenshot:
+![Post Detail](screenshots/post-detail.png)
 
-```
-![forget password Page](screenshots/forget password.png)
-```
 
----
+## 🔑 Forgot Password
 
-## 📄 forget password
+![Forgot Password](screenshots/forgot-password.png)
 
-Add screenshot:
 
-```
+## ❤️ Like System
 
-```
-
-## 💬 Comments & Likes
-
-Add screenshot:
-
-```
-![Like ](screenshots/like.png)
-```
+![Like System](screenshots/like.png)
 
 ---
 
 # 🔮 Future Improvements
 
-* Follow / Unfollow System
-* Direct Messaging
-* Notifications
-* User Search
-* Hashtags
-* Infinite Scroll
-* Dark Mode
-* Deploy on VPS
+- Follow / Unfollow System
+- Direct Messaging
+- Notifications
+- User Search
+- Hashtags
+- Infinite Scroll
+- Dark Mode
+- Deploy on VPS
 
 ---
 
@@ -298,19 +245,16 @@ Backend Developer
 
 Skills:
 
-```
-Python
-Django
-Django Templates
-Database Design
+Python  
+Django  
+Django Templates  
+Database Design  
 Git
-```
+
 
 GitHub:
 
-```
 https://github.com/your-username
-```
 
 ---
 
