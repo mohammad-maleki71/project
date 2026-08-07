@@ -182,15 +182,9 @@ http://127.0.0.1:8000/
 
 ![Register Page](screenshots/register.png)
 
-
-## 🔢 Verification Code Page
-
-![Verification Code](screenshots/verify-code.png)
-
-
 ## 👤 User Profile
 
-![Profile Page](screenshots/profile.png)
+![Profile Page](screenshots/profiles.png)
 
 
 ## ✏️ Edit Profile
@@ -200,22 +194,16 @@ http://127.0.0.1:8000/
 
 ## 📰 Create Post
 
-![Create Post](screenshots/create-post.png)
-
-
-## 🔄 Update Post
-
-![Update Post](screenshots/update-post.png)
-
+![Create Post](screenshots/create.png)
 
 ## 📄 Post Detail
 
-![Post Detail](screenshots/post-detail.png)
+![Post Detail](screenshots/details.png)
 
 
 ## 🔑 Forgot Password
 
-![Forgot Password](screenshots/forgot-password.png)
+![Forgot Password](screenshots/forget-password.png)
 
 
 ## ❤️ Like System
