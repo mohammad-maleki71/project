@@ -170,7 +170,7 @@ http://127.0.0.1:8000/
 
 ## 🏠 Home Page
 
-![Home Page](screenshots/home.png)
+![Home Page](screenshots/homapage.png)
 
 
 ## 🔐 Login Page
