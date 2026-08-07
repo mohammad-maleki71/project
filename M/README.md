@@ -1,176 +1,319 @@
-\# 🌐 Social Media Project
+# 📱 Social Media Web Application
 
-با سلام
+A full-featured **Social Media Web Application** built with **Django**.
 
-این بروژه یک شبکه اجتماعی است که در ان کاربران میتونن بست بگذارند وبتهای بقیه دوسان رو لایک کنند دوستان خو رو فالو کنند کامنتهای خود رو ثبت کنند و به نظرات سایر کاربران باخ دهند 
+This project allows users to create accounts, manage profiles, publish posts, interact with other users through likes and comments, and manage their content through a clean and simple web interface.
 
-با تشکر 
-
-محمد ملکی
+The application is developed using Django's built-in authentication system and follows a server-side rendered architecture.
 
 ---
 
+# 🚀 Features
 
+## 👤 Account System
 
-\## 🚀 ویژگی‌ها
-
-
-
-\- ثبت‌نام و ورود کاربران با شماره تلفن    
-
-\- ایجاد، ویرایش و حذف پست‌ها  
-
-\- ارسال و پاسخ به کامنت‌ها (Reply)  
-
-\- پروفایل شخصی برای هر کاربر  
-
-\- نمایش زمان ایجاد و ویرایش پست‌ها  
-
-\- محیط کاربری ساده و واکنش‌گرا با Bootstrap  
-
-
+* User Registration
+* User Login & Logout
+* Email/OTP Verification
+* Password Reset System
+* User Profile Management
+* Edit Profile
+* User Relations
 
 ---
 
+## 📝 Post System
 
+* Create Posts
+* Update Posts
+* Delete Posts
+* Post Detail Page
+* Upload Images
+* Display User Posts
+* Media Management
 
-\## ⚙️ نصب و راه‌اندازی
+---
 
+## 💬 Interaction System
 
+* Like Posts
+* Comment on Posts
+* View Comments
+* User Interaction Between Profiles
 
-\### 1️⃣ کلون کردن پروژه از GitHub
+---
 
+## 🎨 Frontend
 
+* Responsive Design
+* Django Templates
+* Bootstrap Styling
+* Static Files Management
+* Clean User Interface
+
+---
+
+# 🛠 Technologies
+
+* Python
+* Django
+* HTML5
+* CSS3
+* Bootstrap
+* SQLite Database
+* Git & GitHub
+
+---
+
+# 📂 Project Structure
+
+```text
+M/
+│
+├── account/
+│   ├── models.py
+│   ├── views.py
+│   ├── forms.py
+│   ├── managers.py
+│   ├── signals.py
+│   ├── urls.py
+│   └── templates/
+│       └── account/
+│
+├── home/
+│   ├── models.py
+│   ├── views.py
+│   ├── forms.py
+│   ├── urls.py
+│   └── templates/
+│       └── home/
+│
+├── M/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
+│
+├── templates/
+│   ├── base.html
+│   └── inc/
+│
+├── static/
+│   └── css/
+│
+├── media/
+│
+├── manage.py
+├── requirements.txt
+├── utils.py
+└── README.md
+```
+
+---
+
+# ⚙ Installation
+
+## Clone Repository
 
 ```bash
+git clone https://github.com/your-username/social-media.git
+```
 
-git clone https://github.com/USERNAME/social-media.git
+Enter project directory:
 
-cd social-media
+```bash
+cd M
+```
 
+---
 
+## Create Virtual Environment
 
-\## ساخت محیط مجازی:
+```bash
+python -m venv env
+```
 
+Activate environment:
 
+### Windows
 
-python -m venv venv
+```bash
+env\Scripts\activate
+```
 
-\# فعال‌سازی محیط مجازی
+### Linux / macOS
 
-\# ویندوز:
+```bash
+source env/bin/activate
+```
 
-venv\\Scripts\\activate.bat
+---
 
-\# لینوکس / مک:
+## Install Dependencies
 
-source venv/bin/activate
-
-
-
-نصب وابستگی ها:
-
-kavenegar
-
-جهت ارسال بیامک و. رجیستر کردن یوزها
-
-
-
+```bash
 pip install -r requirements.txt
+```
 
+---
 
+## Database Migration
 
-اعمال مهاجرتها
-
+```bash
 python manage.py migrate
+```
 
+---
 
+## Create Admin User
 
-ساخت سوبر یوزر
-
+```bash
 python manage.py createsuperuser
+```
 
+---
 
+## Run Project
 
-ران کردن سرور
-
+```bash
 python manage.py runserver
+```
 
+Open:
 
-
-مشاهده بروژه
-
+```text
 http://127.0.0.1:8000/
+```
 
+---
 
+# 📸 Screenshots
 
-ساختار بروژه  
+## 🏠 Home Page
 
-social-media/
+Add screenshot:
 
-│
+```
+![Home Page](screenshots/home.png)
+```
 
-├── account/           # مدیریت کاربران (User, Profile)
+---
 
-├── home/              # پست‌ها، کامنت‌ها و ریپلای‌ها
+## 🔐 Login Page
 
-├── templates/         # قالب‌های HTML
+Add screenshot:
 
-├── static/            # فایل‌های CSS و JS
+```
+![Login Page](screenshots/login.png)
+```
 
-├── db.sqlite3
+---
 
-├── manage.py
+## 📝 Register Page
 
-└── requirements.txt
+Add screenshot:
 
+```
+![Register Page](screenshots/register.png)
+```
 
+---
 
-🧠 تکنولوژی‌های استفاده‌شده
+## 👤 User Profile
 
+Add screenshot:
 
+```
+![Profile Page](screenshots/profile.png)
+```
 
-Python 3.12
+---
 
+## ✏️ Edit Profile
 
+Add screenshot:
 
-Django 5.x
+```
+![Edit Profile Page](screenshots/edit profile.png)
+```
 
+---
 
+## 📰 Create Post
 
-SQLite3
+Add screenshot:
 
+```
+![Create Post Page](screenshots/create a post.png)
+```
 
+---
 
-Bootstrap 5
+## 📄 Post Detail
 
+Add screenshot:
 
+```
+![forget password Page](screenshots/forget password.png)
+```
 
-Git \& GitHub
+---
 
+## 📄 forget password
 
+Add screenshot:
 
+```
 
+```
 
-👨‍💻 توسعه‌دهنده
+## 💬 Comments & Likes
 
+Add screenshot:
 
+```
+![Like ](screenshots/like.png)
+```
 
-👤 Mohammad Maleki Nejan Shahivandi
+---
 
-📧 Email: malekimohammad950@gmail.com
+# 🔮 Future Improvements
 
-🌐 GitHub: github.com/USERNAME
+* Follow / Unfollow System
+* Direct Messaging
+* Notifications
+* User Search
+* Hashtags
+* Infinite Scroll
+* Dark Mode
+* Deploy on VPS
 
+---
 
+# 👨‍💻 Author
 
-❤️ تشکر ویژه
+**Mohammad Maleki**
 
-از جامعه‌ی Django و توسعه‌دهندگان متن‌باز که یادگیری برنامه‌نویسی را ساده‌تر و لذت‌بخش‌تر کرده‌اند 🙌
+Backend Developer
 
+Skills:
 
+```
+Python
+Django
+Django Templates
+Database Design
+Git
+```
 
-📄 مجوز
+GitHub:
 
-این پروژه آزاد است و می‌توانید از آن برای آموزش، توسعه و گسترش استفاده کنید.
+```
+https://github.com/your-username
+```
 
+---
+
+# ⭐ Support
+
+If you like this project, consider giving it a star ⭐ on GitHub.
